@@ -19,3 +19,4 @@ var matchingStrings = function(strings, queries) {
   }
   return Object.values(tracker);
 };
+
