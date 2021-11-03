@@ -11,15 +11,20 @@ const interview = function(street, req) {
   var second = null;
   var nextSet = false;
   for (var i = 0; i < container.length; i++) {
-    if (container[i][0] && first === null || container[i][0] && second !== null && nextSet === true) {
+    if (container[i][0] && first === null && !nextSet) {
       first = container[i][1];
-    }
-    if (container[i][0] && second === null || container[i][0] && first !== null) {
+    } else if (container[i][0] && second === null && !nextSet) {
       second = container[i][1];
       nextSet = true;
+    } else {
+      if (container[i][0] && nextSet) {
+      first = container[i][1];
+      } else if (container[i][0] && nextSet) {
+      second = container[i][1];
+      }
     }
   }
-  console.log(first, second)
+  console.log('first: ' + first, second)
   if (first === second) {
     return first || second;
   } else {
