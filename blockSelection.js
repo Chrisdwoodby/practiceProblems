@@ -1,3 +1,24 @@
+var Blocks = [
+    {
+        Grocery: false,
+        Movies: false,
+        Laundry: true
+    },
+    {
+        Laundry: false,
+        Movies: false,
+        Grocery: false,
+    },
+    {
+        Grocery: false,
+        Movies: true,
+        Laundry: true
+    }
+]
+
+var request = ['Movies', 'Laundry'];
+
+
 const interview = function(street, req) {
 
   var container = [];
@@ -26,7 +47,7 @@ const interview = function(street, req) {
       }
     }
   }
-//   console.log('first: ' + first, second)
+  console.log('first: ' + first, second)
   if (first || second === null) {
     return (first || second);
   }
@@ -36,3 +57,5 @@ const interview = function(street, req) {
     return Math.floor((second - first) / 2) + first;
   }
 }
+
+console.log(interview(Blocks, request));
